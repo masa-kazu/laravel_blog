@@ -17,18 +17,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>テスト1</td>
-                    <td>テスト1です。</td>
-                    <td>2022/01/01</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>テスト2</td>
-                    <td>テスト2です。</td>
-                    <td>2022/01/02</td>
-                </tr>
+                @foreach ($articles as $article)
+                    <tr>
+                        <td>{{ $article->id }}</td>
+                        <td>{{ $article->title }}</td>
+                        <td>{{ $article->content }}</td>
+                        <td>{{ $article->updated_at }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

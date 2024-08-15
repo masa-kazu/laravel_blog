@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article; // モデルを使用するため
 
 class ArticleController extends Controller
 {
@@ -11,6 +12,10 @@ class ArticleController extends Controller
      */
     public function showArticles()
     {
-        return view('articles.index');
+        // 全ての記事データを取得
+        $articles = Article::all();
+
+        // compact関数を使用
+        return view('articles.index', compact('articles'));
     }
 }
