@@ -7,8 +7,8 @@
 @section('content')
     <div class="row">
         <h2>記事一覧</h2>
-        <table class="table table-bordered table-hover ">
-            <thead class="bg-info text-light">
+        <table class="table table-bordered table-hover">
+            <thead class="text-light" style="background-color: #F4A460;">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">タイトル</th>
@@ -21,7 +21,7 @@
                     <tr>
                         <td>{{ $article->id }}</td>
                         <td>
-                            <a href="{{ route('showArticle', $article->id) }}">
+                            <a class="table-title" href="{{ route('showArticle', $article->id) }}" style="color: black;">
                             {{ $article->title }}
                             </a>
                         </td>

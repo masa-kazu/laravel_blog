@@ -1,0 +1,12 @@
+body {
+    font-family: "Mochiy Pop One", sans-serif;
+    background-color: antiquewhite;
+}
+
+.table {
+    border: solid black;
+}
+
+.table-title {
+    text-decoration: none;
+}

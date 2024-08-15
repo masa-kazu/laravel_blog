@@ -36,7 +36,7 @@
                     <a class="btn btn-secondary mr-2" href="{{ route('showArticles') }}">
                         キャンセル
                     </a>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn" style="background-color: #B22222; color: white;">
                         投稿
                     </button>
                 </div>
