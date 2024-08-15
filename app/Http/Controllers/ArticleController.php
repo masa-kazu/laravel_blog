@@ -18,4 +18,15 @@ class ArticleController extends Controller
         // compact関数を使用
         return view('articles.index', compact('articles'));
     }
+
+    /**
+     * 記事詳細を表示する
+     */
+    public function showArticle($id)
+    {
+        // 渡されてきた記事IDのデータを取得
+        $article = Article::find($id);
+
+        return view('articles.detail', compact('article'));
+    }
 }

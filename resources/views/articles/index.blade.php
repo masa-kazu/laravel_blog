@@ -20,7 +20,11 @@
                 @foreach ($articles as $article)
                     <tr>
                         <td>{{ $article->id }}</td>
-                        <td>{{ $article->title }}</td>
+                        <td>
+                            <a href="{{ route('showArticle', $article->id) }}">
+                            {{ $article->title }}
+                            </a>
+                        </td>
                         <td>{{ $article->content }}</td>
                         <td>{{ $article->updated_at }}</td>
                     </tr>

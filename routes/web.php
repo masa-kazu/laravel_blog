@@ -9,3 +9,6 @@ Route::get('/', function () {
 
 // 投稿一覧を表示
 Route::get('/articles', [ArticleController::class, 'showArticles'])->name('showArticles');
+
+// 記事詳細を表示
+Route::get('/article/{id}', [ArticleController::class, 'showArticle'])->name('showArticle');
