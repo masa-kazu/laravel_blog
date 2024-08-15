@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article; // モデルを使用するため
 use App\Http\Requests\ArticleStoreRequest; // バリデーションを使用
+use Illuminate\Support\Facades\DB; // トランザクション用
+use Illuminate\Support\Facades\Log; // ログ出力用
 
 class ArticleController extends Controller
 {
@@ -33,13 +35,29 @@ class ArticleController extends Controller
      */
     public function storeArticle(ArticleStoreRequest $request)
     {
+        // トランザクション開始
+    DB::beginTransaction();
+    try {
         // 記事登録処理
         Article::create([
             'title' => $request->title,
             'content' => $request->content,
         ]);
 
-        return redirect()->route('showArticles');
+        // トランザクションコミット
+        DB::commit();
+    } catch(\Exception $e) {
+        // トランザクションロールバック
+        DB::rollBack();
+
+        // ログ出力
+        Log::debug($e);
+
+        // エラー画面遷移
+        abort(500);
+    }
+
+    return redirect()->route('showArticles');
     }
 
     /**
