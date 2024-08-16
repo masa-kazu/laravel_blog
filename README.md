@@ -1,7 +1,24 @@
-## 機能
+## Laraverを使用したブログ投稿アプリ
 
+## 機能
+CRUD
 
 ## 参考画像
+
+## 一覧画面
+<img width="1082" alt="一覧画面" src="https://github.com/user-attachments/assets/c2ed2fa2-b724-4c82-81c0-373f9aa4f6a5">
+
+## 作成画面
+<img width="1083" alt="作成画面" src="https://github.com/user-attachments/assets/d059edac-0eed-423b-886b-42a5bcf463ca">
+
+## 詳細画面
+<img width="1085" alt="詳細画面" src="https://github.com/user-attachments/assets/099151fc-ce1e-4d8b-b9b1-e7477ecc943b">
+
+## 編集画面
+<img width="1080" alt="編集画面" src="https://github.com/user-attachments/assets/9f905985-d4db-48bc-b407-a1c900654fae">
+
+## 削除
+<img width="1084" alt="削除" src="https://github.com/user-attachments/assets/524bb37c-3023-4c14-907e-a77d527bc9ea">
 
 
 
