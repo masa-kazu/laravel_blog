@@ -1,4 +1,5 @@
 ## Laraverを使用したブログ投稿アプリ
+Laravel Sail - Laravel 11.x　を使用
 
 ## 機能
 CRUD
