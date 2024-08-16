@@ -12,4 +12,5 @@
     </div>
     <p class="mt-4">{{ $article->content }}</p>
     <a href="{{ route('showArticles') }}" class="mt-3 btn btn-secondary">戻る</a>
+    <a href="{{ route('editArticle', $article->id) }}" class="mt-3 btn" style="background-color: #B22222; color: white;">編集</a>
 @endsection
