@@ -16,7 +16,7 @@
         <a href="{{ route('editArticle', $article->id) }}" class="mt-3 mr-2 btn" style="background-color: #058118; color: white;">編集</a>
         <form method="POST" action="{{ route('deleteArticle', $article->id) }}">
             @csrf
-            <button type="submit" class="mt-3 mr-2 btn btn-danger">削除</button>
+            <button type="submit" class="mt-3 mr-2 btn btn-danger" onclick='return confirm("本当に削除しますか？")'>削除</button>
         </form>
     </div>
 @endsection
