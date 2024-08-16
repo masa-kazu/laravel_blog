@@ -7,8 +7,8 @@
 @section('content')
     <div class="row">
         <h2>記事一覧</h2>
-        <table class="table table-bordered table-hover ">
-            <thead class="bg-info text-light">
+        <table class="table table-bordered table-hover">
+            <thead class="text-light" style="background-color: #F4A460;">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">タイトル</th>
@@ -17,18 +17,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>テスト1</td>
-                    <td>テスト1です。</td>
-                    <td>2022/01/01</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>テスト2</td>
-                    <td>テスト2です。</td>
-                    <td>2022/01/02</td>
-                </tr>
+                @foreach ($articles as $article)
+                    <tr>
+                        <td>{{ $article->id }}</td>
+                        <td>
+                            <a class="table-title" href="{{ route('showArticle', $article->id) }}" style="color: black;">
+                            {{ $article->title }}
+                            </a>
+                        </td>
+                        <td>{{ $article->content }}</td>
+                        <td>{{ $article->updated_at }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
