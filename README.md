@@ -1,4 +1,4 @@
-## Laraverを使用したブログ投稿アプリ
+## Laravelを使用したブログ投稿アプリ
 Laravel Sail - Laravel 11.xを使用
 
 ## 機能
