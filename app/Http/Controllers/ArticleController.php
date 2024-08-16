@@ -118,4 +118,34 @@ class ArticleController extends Controller
 
         return view('articles.detail', compact('article'));
     }
+
+    /**
+     * 記事削除処理
+     */
+    public function deleteArticle($id)
+    {
+        // トランザクション開始
+        DB::beginTransaction();
+        try{
+            // 渡されてきた記事IDのデータを取得
+            $article = Article::find($id);
+
+            // 記事削除処理
+            $article->delete();
+
+            // トランザクションコミット
+            DB::commit();
+        } catch(\Exception $e) {
+            // トランザクションロールバック
+            DB::rollBack();
+
+            // ログ出力
+            Log::debug($e);
+
+            // エラー画面遷移
+            abort(500);
+        }
+
+        return redirect()->route('showArticles');
+    }
 }

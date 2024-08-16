@@ -24,3 +24,6 @@ Route::post('/article/store', [ArticleController::class,'storeArticle'])->name('
 
 // 記事詳細を表示
 Route::get('/article/{id}', [ArticleController::class, 'showArticle'])->name('showArticle');
+
+// 記事削除処理
+Route::post('/article/delete/{id}', [ArticleController::class, 'deleteArticle'])->name('deleteArticle');

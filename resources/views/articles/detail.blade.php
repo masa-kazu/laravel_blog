@@ -11,6 +11,12 @@
         <span>更新日：{{ $article->updated_at }}</span>
     </div>
     <p class="mt-4">{{ $article->content }}</p>
-    <a href="{{ route('showArticles') }}" class="mt-3 btn btn-secondary">戻る</a>
-    <a href="{{ route('editArticle', $article->id) }}" class="mt-3 btn" style="background-color: #B22222; color: white;">編集</a>
+    <div class="d-flex">
+        <a href="{{ route('showArticles') }}" class="mt-3 mr-2 btn btn-secondary">戻る</a>
+        <a href="{{ route('editArticle', $article->id) }}" class="mt-3 mr-2 btn" style="background-color: #058118; color: white;">編集</a>
+        <form method="POST" action="{{ route('deleteArticle', $article->id) }}">
+            @csrf
+            <button type="submit" class="mt-3 mr-2 btn btn-danger">削除</button>
+        </form>
+    </div>
 @endsection
